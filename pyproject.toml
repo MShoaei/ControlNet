@@ -1,0 +1,35 @@
+[project]
+name = "controlnet"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "addict>=2.4.0",
+    "albumentations>=2.0.5",
+    "basicsr>=1.4.2",
+    "convkan>=0.0.1.2",
+    "diffusers>=0.32.2",
+    "einops>=0.8.1",
+    "gradio>=5.20.1",
+    "imageio>=2.37.0",
+    "imageio-ffmpeg>=0.6.0",
+    "invisible-watermark>=0.2.0",
+    "kornia>=0.8.0",
+    "omegaconf>=2.3.0",
+    "open-clip-torch>=2.31.0",
+    "opencv-contrib-python>=4.11.0.86",
+    "prettytable>=3.15.1",
+    "pytorch-lightning>=2.5.0.post0",
+    "safetensors>=0.5.3",
+    "streamlit>=1.43.1",
+    "streamlit-drawable-canvas>=0.9.3",
+    "test-tube>=0.7.5",
+    "timm>=1.0.15",
+    "tokenizers>=0.21.0",
+    "torchmetrics>=1.6.2",
+    "transformers>=4.49.0",
+    "webdataset>=0.2.111",
+    "xformers>=0.0.29.post3",
+    "yapf>=0.43.0",
+]
