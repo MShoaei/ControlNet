@@ -16,6 +16,7 @@ import numpy as np
 from einops import repeat
 
 from ldm.util import instantiate_from_config
+from convkan.convkan_layer import ConvKAN
 
 
 def make_beta_schedule(schedule, n_timestep, linear_start=1e-4, linear_end=2e-2, cosine_s=8e-3):
@@ -228,6 +229,14 @@ def conv_nd(dims, *args, **kwargs):
         return nn.Conv2d(*args, **kwargs)
     elif dims == 3:
         return nn.Conv3d(*args, **kwargs)
+    raise ValueError(f"unsupported dimensions: {dims}")
+
+def convkan_nd(dims, *args, **kwargs):
+    """
+    Create a 1D, 2D, or 3D convolution KAN module.
+    """
+    if dims == 2:
+        return ConvKAN(*args, **kwargs)
     raise ValueError(f"unsupported dimensions: {dims}")
 
 

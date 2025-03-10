@@ -8,6 +8,7 @@ dependencies = [
     "addict>=2.4.0",
     "albumentations>=2.0.5",
     "basicsr>=1.4.2",
+    "controlnet-aux>=0.0.7",
     "convkan>=0.0.1.2",
     "diffusers>=0.32.2",
     "einops>=0.8.1",

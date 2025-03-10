@@ -5,6 +5,7 @@ import torch.nn as nn
 
 from ldm.modules.diffusionmodules.util import (
     conv_nd,
+    convkan_nd,
     linear,
     zero_module,
     timestep_embedding,
@@ -279,7 +280,8 @@ class ControlNet(nn.Module):
         self._feature_size += ch
 
     def make_zero_conv(self, channels):
-        return TimestepEmbedSequential(zero_module(conv_nd(self.dims, channels, channels, 1, padding=0)))
+        # return TimestepEmbedSequential(zero_module(conv_nd(self.dims, channels, channels, 1, padding=0)))
+        return TimestepEmbedSequential(zero_module(convkan_nd(self.dims, channels, channels, 1, padding=0)))
 
     def forward(self, x, hint, timesteps, context, **kwargs):
         t_emb = timestep_embedding(timesteps, self.model_channels, repeat_only=False)
